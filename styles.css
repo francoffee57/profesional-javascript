@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+    font-family: 'Amatic SC', cursive;
+}
+body{
+    background-color: #efefef;
+}
+
+/* HEADER------------------------------------------- */
+header{
+    width: 100%;
+    height: 20vh;
+    text-align: center;
+    font-size: 2rem;
+    letter-spacing: .5rem;
+    color: white;
+    background-color: black;
+}
+
+header,
+main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* Main ------------------------------------------ */
+main{
+    width: 100%;
+    height: 80vh;
+}
