@@ -1,26 +1,18 @@
 const video = document.getElementById('video');
 const playButton = document.getElementById('media-play');
 
-class MediaPlayer{
- constructor(config){
-     this.media = config.el;
- }
- playMedia(){
-     this.media.play();
- }
- pauseMedia(){
-    this.media.pause();
- }
-}
 
-const play = new MediaPlayer({ el : video });
+import { play } from './mediaPlayer.mjs'
+
 
 playButton.onclick = () => {
     // Comprobamos si el video esta pausado
     if(video.paused){
          play.playMedia()
+         playButton.innerHTML = "pause"
     } 
     else{
          play.pauseMedia()
+         playButton.innerHTML = "play"
     }
 }
