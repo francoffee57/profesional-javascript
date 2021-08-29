@@ -1,18 +1,36 @@
+import { AutoPlay } from './plugins/autoPlay.mjs'
 
-class MediaPlayer{
-    constructor(config) {
-        this.media = config.el;
-        this.plugins = config.plugins || [];
+export class MediaPlayer{
+    constructor({ video, plugins }) {
+        this.media = video
+        this.plugins = plugins || []
+        this._initPlugins()
+      }
+
+    _initPlugins() {
+      this.plugins.forEach(plugin => {
+        plugin.run()
+      })
     }
-
     playMedia(){
-        this.media.play();
+        console.log(this.media)
+        this.media.play()
     }
     pauseMedia(){
-       this.media.pause();
+        console.log(this.media)
+       this.media.pause()
     }
+
+    mute(){
+        this.media.muted = true
+        console.log('mute');
+    }
+    unMute(){
+        this.media.muted = false
+        console.log('unMute');
+    }
+
 }
 
 
-export const play = new MediaPlayer({ el : video });
-
+export const play = new MediaPlayer({ video, plugins: [new AutoPlay(video)] })//[ new AutoPlay(video) ] 
