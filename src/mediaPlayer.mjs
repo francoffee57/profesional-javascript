@@ -33,4 +33,4 @@ export class MediaPlayer{
 }
 
 
-export const play = new MediaPlayer({ video, plugins: [new AutoPlay(video)] })//[ new AutoPlay(video) ] 
+export const play = new MediaPlayer({ video, plugins: [ new AutoPlay(video) ] })//[ new AutoPlay(video) ] 
