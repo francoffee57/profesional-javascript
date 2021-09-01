@@ -1,4 +1,5 @@
 import { AutoPlay } from './plugins/autoPlay.mjs'
+import { AutoPause } from './plugins/autoPause.mjs'
 
 export class MediaPlayer{
     constructor({ video, plugins }) {
@@ -13,24 +14,24 @@ export class MediaPlayer{
       })
     }
     playMedia(){
-        console.log(this.media)
         this.media.play()
     }
     pauseMedia(){
-        console.log(this.media)
        this.media.pause()
     }
 
     mute(){
         this.media.muted = true
-        console.log('mute');
     }
     unMute(){
         this.media.muted = false
-        console.log('unMute');
     }
 
 }
 
 
-export const play = new MediaPlayer({ video, plugins: [ new AutoPlay(video) ] })//[ new AutoPlay(video) ] 
+export const play = new MediaPlayer({ 
+  video, 
+  plugins: [ new AutoPlay(video) , new AutoPause(video) ] 
+})//[ new AutoPlay(video) ] 
+
