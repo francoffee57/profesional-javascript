@@ -28,3 +28,9 @@ muteButton.onclick = () => {
           muteButton.innerText = 'unmute'
      }
  }
+
+ //Saber si el navegador le da apoyo a los seviceWorker
+ if('serviceWorker' in navigator){
+     //registramos un archivo llamado sw
+     navigator.serviceWorker.register('./sw.js').catch(error =>{ console.error(error.message)})
+}
