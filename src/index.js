@@ -1,6 +1,7 @@
-const video = document.getElementById('video');
-const playButton = document.getElementById('media-play');
+const video = document.getElementById('video')
+const playButton = document.getElementById('media-play')
 const muteButton = document.getElementById('media-mute')
+const sound = document.getElementById('sound')
 
 import { play } from './mediaPlayer.mjs'
 
@@ -17,6 +18,7 @@ playButton.onclick = () => {
     }
 }
 
+
 //Mute - UnMute
 muteButton.onclick = () => {
      // Comprobamos si el video tiene silencio
@@ -28,6 +30,12 @@ muteButton.onclick = () => {
           muteButton.innerText = 'unmute'
      }
  }
+//Volumen
+sound.addEventListener('input', (e) => {
+     console.log('sonido: ', e.target.value)
+})
+
+
 
  //Saber si el navegador le da apoyo a los seviceWorker
  if('serviceWorker' in navigator){
