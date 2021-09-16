@@ -26,7 +26,9 @@ export class MediaPlayer{
     unMute(){
         this.media.muted = false
     }
-
+    sound(volumen){
+      this.media.volume = (volumen * 0.1) ** 2
+    }
 }
 
 

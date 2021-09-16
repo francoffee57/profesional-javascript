@@ -32,7 +32,8 @@ muteButton.onclick = () => {
  }
 //Volumen
 sound.addEventListener('input', (e) => {
-     console.log('sonido: ', e.target.value)
+     let volumen = e.target.value
+     play.sound(volumen)
 })
 
 
